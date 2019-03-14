@@ -19,9 +19,9 @@ const App = () => {
 
 
       <Map
-        style="mapbox://styles/mapbox/streets-v9"
+        style="mapbox://styles/thomsva/cjt8scvop03tr1gnktqv2q03b"
         center={[25, 60.1]}
-        zoom={[9]}
+        zoom={[13]}
         containerStyle={{
 
           height: "100vh",
@@ -29,11 +29,9 @@ const App = () => {
         }}>
         <Layer
           type="symbol"
-          id="marker"
-          layout={{ "icon-image": "marker-15" }}>
+          layout={{ "icon-image": "windmill-100", "icon-size": 0.5 }}>
           <Feature coordinates={[25, 60.1]} />
-          <Image id={'iid11'} url={'../ public / photovoltaic.png'}
-            coordinates={[24, 60.1]} />
+
         </Layer>
       </Map>
 
