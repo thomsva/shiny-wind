@@ -1,25 +1,15 @@
 
 import React, { useEffect } from 'react'
-import L from 'leaflet';
+import ReactMapboxGl, { Layer, Feature, Image } from "react-mapbox-gl";
+
 
 
 
 const App = () => {
-  useEffect(() => {
-    // create map
-    L.map('map', {
-      center: [49.8419, 24.0315],
-      zoom: 16,
-      layers: [
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-          attribution:
-            '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        }),
-      ]
-    });
-  }, []);
 
-
+  const Map = ReactMapboxGl({
+    accessToken: "pk.eyJ1IjoidGhvbXN2YSIsImEiOiJjanQ4cHlxbWEwOTRyNDRwYmpzdjQxNGhyIn0.4PU0W2GwrX06FmM5p2frSA"
+  });
 
 
 
@@ -28,9 +18,26 @@ const App = () => {
       <h1>Hello world</h1>
 
 
-      <div id="map"></div>
-      dd
-    </div>
+      <Map
+        style="mapbox://styles/mapbox/streets-v9"
+        center={[25, 60.1]}
+        zoom={[9]}
+        containerStyle={{
+
+          height: "100vh",
+          width: "100vw"
+        }}>
+        <Layer
+          type="symbol"
+          id="marker"
+          layout={{ "icon-image": "marker-15" }}>
+          <Feature coordinates={[25, 60.1]} />
+          <Image id={'iid11'} url={'../ public / photovoltaic.png'}
+            coordinates={[24, 60.1]} />
+        </Layer>
+      </Map>
+
+    </div >
 
 
   )
