@@ -1,37 +1,35 @@
 
-import React from 'react'
-import GoogleMapReact from 'google-map-react'
+import React, { useEffect } from 'react'
+import L from 'leaflet';
 
 
-
-const AnyReactComponent = ({ text }) => <div>{text}</div>
 
 const App = () => {
-  const center = {
-    lat: 61,
-    lng: 25
-  }
-  const zoom = 7
+  useEffect(() => {
+    // create map
+    L.map('map', {
+      center: [49.8419, 24.0315],
+      zoom: 16,
+      layers: [
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+          attribution:
+            '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }),
+      ]
+    });
+  }, []);
+
+
+
+
 
   return (
     <div>
       <h1>Hello world</h1>
 
 
-      <div style={{ height: '100vh', width: '100%' }}>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: 'secret' }}
-          defaultCenter={center}
-          defaultZoom={zoom}
-
-        >
-          <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
-            text="My Marker"
-          />
-        </GoogleMapReact>
-      </div>
+      <div id="map"></div>
+      dd
     </div>
 
 
