@@ -10,9 +10,8 @@ Työn ja sovelluksen toiminnallisuuden laajuus ei vielä tässä vaiheessa ole s
 Sovellus rakennetaan Node.js / React alustoille. 
 
 ## Tuntikirjanpito
-14.3 
-2h aiheen määrittely, tietolähteiden etsiminen
-4h react rungon tekeminen, karttakomponenttien kokeilua ja opettelua
-
-
-6h yhteensä
+pvm|tunnit|kuvaus
+------|------|------
+14.3|2h|aiheen määrittely, tietolähteiden etsiminen
+||4h|react rungon tekeminenkarttakomponenttien kokeilua ja opettelua
+||6h|yhteensä
